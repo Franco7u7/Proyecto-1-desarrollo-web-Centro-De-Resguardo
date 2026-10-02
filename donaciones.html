@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donaciones - Refugio de Perros</title>
+</head>
+<body>
+
+    <!-- ==========================================
+         VISTA 1: PÁGINA PRINCIPAL DE DONACIONES (Pública)
+    =========================================== -->
+    <section id="vista-donaciones">
+        <h1>Apoya a Nuestro Refugio</h1>
+        <p>Tu ayuda nos permite seguir rescatando y cuidando a más perritos. Puedes apoyarnos económicamente o donando artículos.</p>
+
+        <!-- SECCIÓN DE DONACIONES MONETARIAS -->
+        <article id="donacion-monetaria">
+            <h2>Donación Económica</h2>
+            <p>Selecciona un monto o ingresa la cantidad que deseas aportar:</p>
+            
+            <form id="form-donacion-dinero" action="#vista-metodos-pago">
+                <div class="montos-predefinidos">
+                    <button type="button" data-monto="1">$1</button>
+                    <button type="button" data-monto="5">$5</button>
+                    <button type="button" data-monto="10">$10</button>
+                    <button type="button" data-monto="20">$20</button>
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="monto-deseado">O ingresa otro monto ($):</label>
+                    <input type="number" id="monto-deseado" name="monto-deseado" min="1" step="0.01" placeholder="Ej. 50">
+                </div>
+                
+                <br>
+                <button type="submit">Continuar a Métodos de Pago</button>
+            </form>
+        </article>
+
+        <hr>
+
+        <!-- SECCIÓN DE DONACIONES EN ESPECIE (ARTÍCULOS) -->
+        <article id="donacion-articulos">
+            <h2>Donación de Artículos</h2>
+            <p>Siempre necesitamos insumos para mantener a nuestros perritos felices y saludables.</p>
+            
+            <form id="form-donacion-especie" action="#vista-ubicacion-entrega">
+                <fieldset>
+                    <legend>¿Qué te gustaría donar?</legend>
+                    
+                    <div>
+                        <input type="checkbox" id="donar-comida" name="tipo-donacion" value="comida">
+                        <label for="donar-comida">Comida (Croquetas, latas, premios)</label>
+                    </div>
+                    
+                    <div>
+                        <input type="checkbox" id="donar-juguetes" name="tipo-donacion" value="juguetes">
+                        <label for="donar-juguetes">Juguetes y accesorios (correas, collares)</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="donar-medicina" name="tipo-donacion" value="medicina">
+                        <label for="donar-medicina">Medicinas e insumos médicos (gasas, desparasitantes)</label>
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="donar-otros" name="tipo-donacion" value="otros">
+                        <label for="donar-otros">Otros (Camas, cobijas, artículos de limpieza)</label>
+                    </div>
+                </fieldset>
+
+                <div>
+                    <label for="desc-donacion">Detalles adicionales de tu donación (Opcional):</label>
+                    <textarea id="desc-donacion" name="desc-donacion" rows="2" placeholder="Ej. 2 bolsas de croquetas de 15kg..."></textarea>
+                </div>
+
+                <button type="submit">Ver dónde y cuándo entregar</button>
+            </form>
+        </article>
+    </section>
+
+    <hr>
+
+    <!-- ==========================================
+         VISTA 2: MÉTODOS DE PAGO (Redirección dinero)
+    =========================================== -->
+    <section id="vista-metodos-pago">
+        <h2>Elige tu método de pago</h2>
+        <p>Estás a un paso de ayudarnos. Selecciona cómo deseas realizar tu aporte:</p>
+
+        <form id="form-pago">
+            <div>
+                <input type="radio" id="pago-tarjeta" name="metodo-pago" value="tarjeta" required>
+                <label for="pago-tarjeta">Tarjeta de Crédito / Débito</label>
+            </div>
+            
+            <div>
+                <input type="radio" id="pago-paypal" name="metodo-pago" value="paypal">
+                <label for="pago-paypal">PayPal</label>
+            </div>
+
+            <div>
+                <input type="radio" id="pago-gofundme" name="metodo-pago" value="gofundme">
+                <label for="pago-gofundme">GoFundMe</label>
+            </div>
+
+            <div>
+                <input type="radio" id="pago-bitcoin" name="metodo-pago" value="bitcoin">
+                <label for="pago-bitcoin">Bitcoin (Wallet)</label>
+            </div>
+
+            <br>
+            <button type="submit">Procesar Donación</button>
+            <a href="#vista-donaciones"><button type="button">Cancelar / Volver</button></a>
+        </form>
+    </section>
+
+    <hr>
+
+    <!-- ==========================================
+         VISTA 3: UBICACIÓN Y HORARIOS (Redirección artículos)
+    =========================================== -->
+    <section id="vista-ubicacion-entrega">
+        <h2>¡Gracias por tu intención de donar artículos!</h2>
+        <p>Te esperamos en nuestras instalaciones para recibir tu donativo.</p>
+
+        <article id="info-refugio">
+            <h3>Nuestra Ubicación</h3>
+            <p><strong>Lugar:</strong> Centro de Resguardo de Santa Tecla</p>
+            <p><strong>Dirección:</strong> Santa Tecla, La Libertad. <em>(Agrega aquí la calle o avenida específica)</em>.</p>
+            
+            <!-- Aquí iría un iframe de Google Maps -->
+            <div id="mapa-placeholder" style="border: 1px solid #ccc; padding: 20px; text-align: center; margin: 15px 0;">
+                <em>[Espacio reservado para el mapa de Google Maps del Centro de Resguardo]</em>
+            </div>
+
+            <h3>Horarios de Recepción</h3>
+            <ul>
+                <li><strong>Lunes a Viernes:</strong> 8:00 AM - 4:00 PM</li>
+                <li><strong>Sábados:</strong> 9:00 AM - 12:00 PM</li>
+                <li><strong>Domingos:</strong> Cerrado</li>
+            </ul>
+
+            <h3>Más Información y Contacto</h3>
+            <ul>
+                <li><strong>Teléfono:</strong> +503 2000-0000 <em>(Recomendamos llamar antes si traes donaciones de gran volumen)</em></li>
+                <li><strong>Correo:</strong> donaciones@resguardosantatecla.org</li>
+                <li><strong>Indicaciones al llegar:</strong> Por favor, dirígete a la entrada principal y notifica al personal que vienes a dejar una donación.</li>
+            </ul>
+        </article>
+
+        <br>
+        <a href="#vista-donaciones"><button type="button">Volver a Donaciones</button></a>
+    </section>
+
+</body>
+</html>
