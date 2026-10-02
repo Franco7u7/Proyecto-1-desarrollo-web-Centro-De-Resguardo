@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conoce a nuestros perritos - Centro de Resguardo</title>
-
-  <!-- Tipografías de Google Fonts -->
+  
+  <!-- Tipografías de Google Fonts: Archivo Black y Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Enlace a la hoja de estilo externa -->
-  <link rel="stylesheet" href="css/perritos.css">
+  <link rel="stylesheet" href="style/styleperritos.css">
 </head>
 <body>
 
@@ -20,23 +20,22 @@
     <nav class="barra-navegacion" aria-label="Navegación principal">
       <ul class="menu-navegacion">
         <li><a href="index.html">Inicio</a></li>
-        <li><a href="perritos.html">Nuestros Perritos</a></li>
+        <li><a href="perritos.html" class="activo">Nuestros Perritos</a></li>
         <li><a href="voluntariado.html">Voluntariado</a></li>
         <li><a href="donaciones.html">Donaciones</a></li>
-        <li><a href="usuario.html">Mi Perfil</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Encabezado con título limpio en azul sobre fondo blanco -->
+  <!-- Encabezado con título limpio en azul -->
   <section class="encabezado-perritos">
-    <h1>¡Conoce a nuestros perritos!</h1>
+    <h1>¡CONOCE A NUESTROS PERRITOS!</h1>
   </section>
 
   <!-- Contenedor principal de la galería -->
   <main class="contenedor-galeria">
     <section class="cuadricula-perritos" aria-label="Galería de perritos">
-
+      
       <!-- Tarjeta 1: Chelito -->
       <article class="tarjeta-perro">
         <svg class="nombre-curvo" viewBox="0 0 300 100">
@@ -191,133 +190,180 @@
   </main>
 
   <!-- ========================================================= -->
-  <!-- SECCIÓN DE HISTORIAS (CON ENLACES POR ID)                 -->
+  <!-- MODALES DE HISTORIA (100% CSS, SIN JAVASCRIPT)            -->
   <!-- ========================================================= -->
-  <section class="seccion-historias">
-    <div id="historia-chelito" class="caja-historia">
-      <div class="contenido-historia">
-        <img src="img/chelito.png" alt="Chelito" class="img-historia">
-        <div>
-          <h2>Chelito</h2>
-          <h3>Su historia</h3>
-          <p>Chelito encuentra alegría en las cosas pequeñas: una voz suave, un paseo sin prisa y un lugar cómodo para descansar. En esta historia, aprende poco a poco que acercarse también puede traer momentos bonitos. Imaginamos para él un hogar paciente, donde cada pequeño paso sea celebrado y el cariño se construya a su ritmo.</p>
-          <a href="#" class="boton-volver">Cerrar y volver a la galería</a>
-        </div>
+
+  <!-- Modal Chelito -->
+  <div id="historia-chelito" class="modal-historia">
+    <div class="caja-modal">
+      <div class="foto-modal-contenedor">
+        <img src="img/chelito.png" alt="Chelito" class="foto-modal">
+      </div>
+      <div class="texto-modal">
+        <h2>Chelito</h2>
+        <p>Chelito encuentra alegría en las cosas pequeñas: una voz suave, un paseo sin prisa y un lugar cómodo para descansar. En esta historia, aprende poco a poco que acercarse también puede traer momentos bonitos. Imaginamos para él un hogar paciente, donde cada pequeño paso sea celebrado y el cariño se construya a su ritmo.</p>
+        <a href="#" class="boton-cerrar-modal">Volver con la camada</a>
       </div>
     </div>
+  </div>
 
-    <div id="historia-goku" class="caja-historia">
-      <div class="contenido-historia">
-        <img src="img/chelito.png" alt="Goku" class="img-historia">
-        <div>
-          <h2>Goku</h2>
-          <h3>Su historia</h3>
-          <p>Goku convierte una tarde cualquiera en una pequeña aventura. Una hoja que se mueve o un juguete nuevo despiertan su curiosidad. Después de explorar, también disfruta una pausa cerca de alguien. Su historia habla de compartir energía y descubrir que volver a casa es lo mejor.</p>
-          <a href="#" class="boton-volver">Cerrar y volver a la galería</a>
-        </div>
+  <!-- Modal Goku -->
+  <div id="historia-goku" class="modal-historia">
+    <div class="caja-modal">
+      <div class="foto-modal-contenedor">
+        <img src="img/chelito.png" alt="Goku" class="foto-modal">
+      </div>
+      <div class="texto-modal">
+        <h2>Goku</h2>
+        <p>Goku convierte una tarde cualquiera en una pequeña aventura. Una hoja que se mueve o un juguete nuevo despiertan su curiosidad. Después de explorar, también disfruta una pausa cerca de alguien. Comparte energía y descubre que volver a casa es lo mejor.</p>
+        <a href="#" class="boton-cerrar-modal">Volver con la camada</a>
       </div>
     </div>
+  </div>
 
-    <div id="historia-candy" class="caja-historia">
-      <div class="contenido-historia">
-        <img src="img/chelito.png" alt="Candy" class="img-historia">
-        <div>
-          <h2>Candy</h2>
-          <h3>Su historia</h3>
-          <p>Candy tiene una manera delicada de entrar en una historia: primero observa y después se acerca con curiosidad. Una manta suave y rutinas tranquilas le dan toda la seguridad que necesita.</p>
-          <a href="#" class="boton-volver">Cerrar y volver a la galería</a>
-        </div>
+  <!-- Modal Candy -->
+  <div id="historia-candy" class="modal-historia">
+    <div class="caja-modal">
+      <div class="foto-modal-contenedor">
+        <img src="img/chelito.png" alt="Candy" class="foto-modal">
+      </div>
+      <div class="texto-modal">
+        <h2>Candy</h2>
+        <p>Candy tiene una manera delicada de entrar en una historia: primero observa y después se acerca con curiosidad. Una manta suave y rutinas tranquilas le dan toda la seguridad que necesita.</p>
+        <a href="#" class="boton-cerrar-modal">Volver con la camada</a>
       </div>
     </div>
+  </div>
 
-    <div id="historia-brandon" class="caja-historia">
-      <div class="contenido-historia">
-        <img src="img/chelito.png" alt="Brandon" class="img-historia">
-        <div>
-          <h2>Brandon</h2>
-          <h3>Su historia</h3>
-          <p>Brandon es el protagonista de las tardes compartidas. Lo imaginamos acompañando un paseo tranquilo y descubriendo cada rincón con calma.</p>
-          <a href="#" class="boton-volver">Cerrar y volver a la galería</a>
-        </div>
+  <!-- Modal Brandon -->
+  <div id="historia-brandon" class="modal-historia">
+    <div class="caja-modal">
+      <div class="foto-modal-contenedor">
+        <img src="img/chelito.png" alt="Brandon" class="foto-modal">
+      </div>
+      <div class="texto-modal">
+        <h2>Brandon</h2>
+        <p>Brandon es el protagonista de las tardes compartidas. Lo imaginamos acompañando un paseo tranquilo y descubriendo cada rincón con calma.</p>
+        <a href="#" class="boton-cerrar-modal">Volver con la camada</a>
       </div>
     </div>
+  </div>
 
-    <div id="historia-gringa" class="caja-historia">
-      <div class="contenido-historia">
-        <img src="img/chelito.png" alt="Gringa" class="img-historia">
-        <div>
-          <h2>Gringa</h2>
-          <h3>Su historia</h3>
-          <p>Gringa prefiere observar antes de acercarse y encuentra alegría en los paseos tranquilos. Comparte el apodo de 'Las Gringas' con Gringuita, pero tiene una personalidad dulce y única.</p>
-          <a href="#" class="boton-volver">Cerrar y volver a la galería</a>
-        </div>
+  <!-- Modal Gringa -->
+  <div id="historia-gringa" class="modal-historia">
+    <div class="caja-modal">
+      <div class="foto-modal-contenedor">
+        <img src="img/chelito.png" alt="Gringa" class="foto-modal">
+      </div>
+      <div class="texto-modal">
+        <h2>Gringa</h2>
+        <p>Gringa prefiere observar antes de acercarse y encuentra alegría en los paseos tranquilos. Comparte el apodo de 'Las Gringas' con Gringuita, pero tiene una personalidad dulce y única.</p>
+        <a href="#" class="boton-cerrar-modal">Volver con la camada</a>
       </div>
     </div>
+  </div>
 
-    <div id="historia-gringuita" class="caja-historia">
-      <div class="contenido-historia">
-        <img src="img/chelito.png" alt="Gringuita" class="img-historia">
-        <div>
-          <h2>Gringuita</h2>
-          <h3>Su historia</h3>
-          <p>Gringuita es la curiosa y traviesa: se asoma a cada novedad y transforma un rincón en un lugar por explorar. Le encanta sentirse acompañada.</p>
-          <a href="#" class="boton-volver">Cerrar y volver a la galería</a>
-        </div>
+  <!-- Modal Gringuita -->
+  <div id="historia-gringuita" class="modal-historia">
+    <div class="caja-modal">
+      <div class="foto-modal-contenedor">
+        <img src="img/chelito.png" alt="Gringuita" class="foto-modal">
+      </div>
+      <div class="texto-modal">
+        <h2>Gringuita</h2>
+        <p>Gringuita es la curiosa y traviesa: se asoma a cada novedad y transforma un rincón en un lugar por explorar. Le encanta sentirse acompañada.</p>
+        <a href="#" class="boton-cerrar-modal">Volver con la camada</a>
       </div>
     </div>
+  </div>
 
-    <div id="historia-luna" class="caja-historia">
-      <div class="contenido-historia">
-        <img src="img/chelito.png" alt="Luna" class="img-historia">
-        <div>
-          <h2>Luna</h2>
-          <h3>Su historia</h3>
-          <p>Luna inspira una historia de calma total. La imaginamos disfrutando del viento fresco de la tarde y de una compañía que respete sus tiempos.</p>
-          <a href="#" class="boton-volver">Cerrar y volver a la galería</a>
-        </div>
+  <!-- Modal Luna -->
+  <div id="historia-luna" class="modal-historia">
+    <div class="caja-modal">
+      <div class="foto-modal-contenedor">
+        <img src="img/chelito.png" alt="Luna" class="foto-modal">
+      </div>
+      <div class="texto-modal">
+        <h2>Luna</h2>
+        <p>Luna inspira una historia de calma total. La imaginamos disfrutando del viento fresco de la tarde y de una compañía que respete sus tiempos.</p>
+        <a href="#" class="boton-cerrar-modal">Volver con la camada</a>
       </div>
     </div>
+  </div>
 
-    <div id="historia-toby" class="caja-historia">
-      <div class="contenido-historia">
-        <img src="img/chelito.png" alt="Toby" class="img-historia">
-        <div>
-          <h2>Toby</h2>
-          <h3>Su historia</h3>
-          <p>Toby es un explorador nato: un juguete escondido se convierte en su mayor tesoro del día. Aprende rápido cuando hay premios y cariño.</p>
-          <a href="#" class="boton-volver">Cerrar y volver a la galería</a>
-        </div>
+  <!-- Modal Toby -->
+  <div id="historia-toby" class="modal-historia">
+    <div class="caja-modal">
+      <div class="foto-modal-contenedor">
+        <img src="img/chelito.png" alt="Toby" class="foto-modal">
+      </div>
+      <div class="texto-modal">
+        <h2>Toby</h2>
+        <p>Toby es un explorador nato: un juguete escondido se convierte en su mayor tesoro del día. Aprende rápido cuando hay premios y cariño.</p>
+        <a href="#" class="boton-cerrar-modal">Volver con la camada</a>
       </div>
     </div>
+  </div>
 
-    <div id="historia-canela" class="caja-historia">
-      <div class="contenido-historia">
-        <img src="img/chelito.png" alt="Canela" class="img-historia">
-        <div>
-          <h2>Canela</h2>
-          <h3>Su historia</h3>
-          <p>Canela da vida a momentos cálidos y hogareños. Le fascina recibir caricias en la cabeza y dormir siestas bajo el sol suave de la mañana.</p>
-          <a href="#" class="boton-volver">Cerrar y volver a la galería</a>
-        </div>
+  <!-- Modal Canela -->
+  <div id="historia-canela" class="modal-historia">
+    <div class="caja-modal">
+      <div class="foto-modal-contenedor">
+        <img src="img/chelito.png" alt="Canela" class="foto-modal">
+      </div>
+      <div class="texto-modal">
+        <h2>Canela</h2>
+        <p>Canela da vida a momentos cálidos y hogareños. Le fascina recibir caricias en la cabeza y dormir siestas bajo el sol suave de la mañana.</p>
+        <a href="#" class="boton-cerrar-modal">Volver con la camada</a>
       </div>
     </div>
+  </div>
 
-    <div id="historia-rocky" class="caja-historia">
-      <div class="contenido-historia">
-        <img src="img/chelito.png" alt="Rocky" class="img-historia">
-        <div>
-          <h2>Rocky</h2>
-          <h3>Su historia</h3>
-          <p>Rocky tiene entusiasmo de sobra para descubrir senderos y aprender trucos nuevos. Espera una familia activa con quien jugar mucho.</p>
-          <a href="#" class="boton-volver">Cerrar y volver a la galería</a>
-        </div>
+  <!-- Modal Rocky -->
+  <div id="historia-rocky" class="modal-historia">
+    <div class="caja-modal">
+      <div class="foto-modal-contenedor">
+        <img src="img/chelito.png" alt="Rocky" class="foto-modal">
+      </div>
+      <div class="texto-modal">
+        <h2>Rocky</h2>
+        <p>Rocky tiene entusiasmo de sobra para descubrir senderos y aprender trucos nuevos. Espera una familia activa con quien jugar mucho.</p>
+        <a href="#" class="boton-cerrar-modal">Volver con la camada</a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <footer class="pie-pagina">
-    <p>&copy; 2026 Refugio Santa Tecla. Todos los derechos reservados.</p>
+  <!-- Pie de página unificado -->
+  <footer class="site-footer">
+    <div class="footer-col">
+      <img class="footer-logo" src="img/logo.png" alt="Logo del Centro de Resguardo" width="80" height="80">
+      <p class="footer-title">Centro de Resguardo Santa Tecla</p>
+      <p>Rescate, cuidado y adopción responsable de perros sin hogar</p>
+    </div>
+
+    <nav class="footer-col" aria-label="Enlaces del pie de página">
+      <h3>Enlaces</h3>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="index.html#mision">Nuestra misión</a></li>
+        <li><a href="perritos.html">Conoce a nuestros perritos</a></li>
+        <li><a href="voluntariado.html">Voluntariado</a></li>
+        <li><a href="donaciones.html">Donaciones</a></li>
+        <li><a href="index.html#como-llegar">Cómo llegar</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-col">
+      <h3>Contacto</h3>
+      <address>
+        <p>Santa Tecla, La Libertad, El Salvador</p>
+        <p><a href="tel:+50379197119">7919-7119</a></p>
+        <p><a href="tel:+50371657419">7165-7419</a></p>
+        <p><a href="https://www.instagram.com/cr.santatecla2025/" target="_blank" rel="noopener">@cr.santatecla2025</a></p>
+      </address>
+    </div>
+
+    <p class="footer-copy">&copy; 2026 Centro de Resguardo Santa Tecla. </p>
   </footer>
-
 </body>
 </html>
