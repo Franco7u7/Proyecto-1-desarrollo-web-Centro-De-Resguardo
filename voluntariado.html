@@ -4,25 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Voluntariados - Centro de Resguardo de Santa Tecla</title>
-  
+
   <!-- Tipografías de Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+
   <!-- Hoja de estilos externa -->
-  <link rel="stylesheet" href="styleee.css">
+  <link rel="stylesheet" href="css/voluntariado.css">
 </head>
 <body>
 
+  <!-- Barra de navegación estandarizada -->
+  <header class="site-header">
+    <nav class="barra-navegacion" aria-label="Navegación principal">
+      <ul class="menu-navegacion">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="perritos.html">Nuestros Perritos</a></li>
+        <li><a href="voluntariado.html">Voluntariado</a></li>
+        <li><a href="donaciones.html">Donaciones</a></li>
+        <li><a href="usuario.html">Mi Perfil</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <!-- Encabezado con franja azul navy -->
-  <header class="encabezado-principal">
+  <section class="encabezado-principal">
     <h1>
       <span class="texto-blanco">Programa de</span>
       <span class="texto-naranja">Voluntariados</span>
     </h1>
-    <p class="subtitulo-encabezado">¡Tu tiempo puede ser su mejor día! </p>
-  </header>
+    <p class="subtitulo-encabezado">¡Tu tiempo puede ser su mejor día!</p>
+  </section>
 
   <!-- Contenido principal -->
   <main class="contenedor-voluntariados">
@@ -31,7 +44,6 @@
     <section class="seccion-voluntariado" id="paseos">
       <article class="tarjeta-voluntariado">
         <header class="cabecera-tarjeta">
-
           <h2>Sé parte del Paseo de nuestros perritos</h2>
         </header>
 
@@ -61,6 +73,8 @@
             <p class="nota-requisito"><strong>Requisito indispensable:</strong> Aplica únicamente para personas adultas con DUI vigente.</p>
           </div>
         </div>
+      </article>
+    </section>
 
     <!-- Sección 2: Baño de Perritos -->
     <section class="seccion-voluntariado" id="banos">
@@ -86,6 +100,8 @@
             <p class="frase-motivacional">Juntos cambiamos sus vidas paso a paso.</p>
           </div>
         </div>
+      </article>
+    </section>
 
     <!-- Sección 3: Jornadas de Limpieza -->
     <section class="seccion-voluntariado" id="limpieza">
@@ -121,14 +137,20 @@
             </aside>
           </div>
         </div>
+      </article>
+    </section>
 
+    <!-- Botón de llamado a la acción para conectarlo con usuario.html -->
+    <div class="contenedor-inscripcion">
+      <a href="usuario.html#vista-voluntariado" class="boton-inscribirse">Inscribirse en voluntariado</a>
+    </div>
 
   </main>
 
   <!-- Pie de página general -->
   <footer class="pie-pagina">
-    <p>Centro de Resguardo de Santa Tecla 2026</p>
-    <p>Para más información o coordinación de grupos institucionales, comunícate con nosotros al tatata NUMERO</p>
+    <p>&copy; 2026 Centro de Resguardo de Santa Tecla. Todos los derechos reservados.</p>
+    <p>Para más información o coordinación de grupos institucionales, comunícate con nosotros al 7919-7119</p>
   </footer>
 
 </body>
