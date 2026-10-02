@@ -1,181 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mi Perfil y Registro - Refugio de Perros</title>
-
-  <!-- Tipografías de Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Hoja de estilos -->
-  <link rel="stylesheet" href="css/usuario.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refugio de Perros</title>
 </head>
 <body>
 
-  <!-- Barra de navegación estandarizada -->
-  <header class="site-header">
-    <nav class="barra-navegacion" aria-label="Navegación principal">
-      <ul class="menu-navegacion">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="perritos.html">Nuestros Perritos</a></li>
-        <li><a href="voluntariado.html">Voluntariado</a></li>
-        <li><a href="donaciones.html">Donaciones</a></li>
-        <li><a href="usuario.html">Mi Perfil</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main class="contenedor-usuario">
-    <section id="vista-login" class="tarjeta-usuario">
-      <h1>Refugio de Perros</h1>
-      <h2>Iniciar Sesión</h2>
-      
-      <form id="form-login">
-        <div class="campo-grupo">
-          <label for="login-email">Correo Electrónico:</label>
-          <input type="email" id="login-email" name="login-email" required>
-        </div>
-        
-        <div class="campo-grupo">
-          <label for="login-password">Contraseña:</label>
-          <input type="password" id="login-password" name="login-password" required>
-        </div>
-        
-        <button type="submit" class="btn-accion">Entrar</button>
-      </form>
-
-      <p class="texto-alternativo">¿No tienes una cuenta? <a href="#vista-registro">Crear una cuenta</a></p>
+    <section id="vista-inicio">
+        <h1>Refugio de Perros</h1>
+        <p>Tu ayuda cambia la vida de muchos perritos.</p>
+        <a href="#vista-usuario"><button type="button">Quiero ser voluntaria</button></a>
     </section>
 
-    <hr class="separador">
+    <hr>
 
-    <section id="vista-registro" class="tarjeta-usuario">
-      <h2>Crear Cuenta Nueva</h2>
-      
-      <form id="form-registro">
-        <div class="campo-grupo">
-          <label for="reg-email">Correo Electrónico:</label>
-          <input type="email" id="reg-email" name="reg-email" required>
-        </div>
-        
-        <div class="campo-grupo">
-          <label for="reg-password">Contraseña:</label>
-          <input type="password" id="reg-password" name="reg-password" required>
-        </div>
-        
-        <button type="submit" class="btn-accion">Registrarse</button>
-      </form>
+    <section id="vista-usuario">
+        <h2>Mi Perfil</h2>
+        <p>Cuéntanos sobre ti y luego agenda tu cita como voluntaria.</p>
 
-      <p class="texto-alternativo">¿Ya tienes cuenta? <a href="#vista-login">Iniciar sesión</a></p>
+        <form id="form-datos-generales">
+            <div>
+                <label for="user-nombre-completo">Nombre Completo:</label>
+                <input type="text" id="user-nombre-completo" name="user-nombre-completo" required>
+            </div>
+
+            <div>
+                <label for="user-telefono">Teléfono de Contacto:</label>
+                <input type="tel" id="user-telefono" name="user-telefono" required>
+            </div>
+
+            <div>
+                <label for="user-dui">DUI:</label>
+                <input type="text" id="user-dui" name="user-dui" placeholder="00000000-0" pattern="[0-9]{8}-[0-9]" maxlength="10" required>
+            </div>
+
+            <div>
+                <label for="user-experiencia-previa">Experiencia previa con perros:</label>
+                <textarea id="user-experiencia-previa" name="user-experiencia-previa" rows="3"></textarea>
+            </div>
+
+            <button type="submit">Agendar en Google Calendar</button>
+        </form>
+
+        <p><a href="#vista-inicio">Volver al inicio</a></p>
     </section>
 
-    <hr class="separador">
+    <script>
+        // Si tienes un enlace de agenda de Google Calendar, ponlo aquí:
+        // const CALENDAR_URL = "https://calendar.app.google/XXXXXXXX";
+        const CALENDAR_URL = null;
 
-    <section id="vista-usuario" class="tarjeta-usuario">
-      <h2>Mi Perfil</h2>
-      <p>Actualiza tu información de contacto general.</p>
-      
-      <form id="form-datos-generales">
-        <div class="campo-grupo">
-          <label for="user-nombre-completo">Nombre Completo:</label>
-          <input type="text" id="user-nombre-completo" name="user-nombre-completo" required>
-        </div>
+        document.getElementById("form-datos-generales").addEventListener("submit", function (e) {
+            e.preventDefault();
 
-        <div class="campo-grupo">
-          <label for="user-telefono">Teléfono de Contacto:</label>
-          <input type="tel" id="user-telefono" name="user-telefono" required>
-        </div>
+            let url = CALENDAR_URL;
+            if (!url) {
+                const detalles =
+                    "Nombre: " + document.getElementById("user-nombre-completo").value +
+                    "\nTeléfono: " + document.getElementById("user-telefono").value +
+                    "\nDUI: " + document.getElementById("user-dui").value +
+                    "\nExperiencia: " + document.getElementById("user-experiencia-previa").value;
 
-        <div class="campo-grupo">
-          <label for="user-direccion">Dirección:</label>
-          <textarea id="user-direccion" name="user-direccion" rows="2" required></textarea>
-        </div>
-
-        <div class="campo-grupo">
-          <label for="user-experiencia-previa">Experiencia previa con perros:</label>
-          <textarea id="user-experiencia-previa" name="user-experiencia-previa" rows="3"></textarea>
-        </div>
-        
-        <button type="submit" class="btn-accion">Guardar Información General</button>
-      </form>
-
-      <h3>Opciones de ayuda</h3>
-      <nav class="acciones-perfil">
-        <a href="#vista-voluntariado" class="btn-secundario">Quiero ser Voluntario</a>
-        <a href="index.html" class="btn-secundario">Cerrar Sesión</a>
-      </nav>
-    </section>
-
-    <hr class="separador">
-
-    <!-- Formulario de inscripción conectado a Google Calendar -->
-    <section id="vista-voluntariado" class="tarjeta-usuario">
-      <h2>Registro de Voluntariado</h2>
-      <p>¡Gracias por querer ayudarnos! Indícanos tu disponibilidad y al registrarte podrás agendar tu jornada en Google Calendar.</p>
-      
-      <form id="form-voluntariado" action="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Voluntariado+Refugio+Santa+Tecla&details=Jornada+de+voluntariado+en+el+Centro+de+Resguardo+de+Santa+Tecla.&location=Centro+de+Resguardo+Municipal+Santa+Tecla" method="get" target="_blank">
-        <fieldset class="grupo-opciones">
-          <legend>Disponibilidad</legend>
-          
-          <div class="campo-grupo">
-            <label for="vol-fecha">Fecha en la que deseas iniciar/asistir:</label>
-            <input type="date" id="vol-fecha" name="vol-fecha" required>
-          </div>
-
-          <div class="campo-grupo">
-            <label for="vol-horas">Horas disponibles al día / a la semana:</label>
-            <input type="text" id="vol-horas" name="vol-horas" placeholder="Ej. 4 horas semanales, de 2pm a 6pm" required>
-          </div>
-        </fieldset>
-
-        <fieldset class="grupo-opciones">
-          <legend>Actividades de Interés (Marca las que apliquen)</legend>
-          
-          <label class="opcion-check">
-            <input type="checkbox" id="act-pasear" name="actividades" value="pasear">
-            <span>Pasear a los perros</span>
-          </label>
-          
-          <label class="opcion-check">
-            <input type="checkbox" id="act-limpiar" name="actividades" value="limpiar">
-            <span>Limpieza de áreas y jaulas</span>
-          </label>
-
-          <label class="opcion-check">
-            <input type="checkbox" id="act-alimentar" name="actividades" value="alimentar">
-            <span>Alimentación y baño</span>
-          </label>
-
-          <label class="opcion-check">
-            <input type="checkbox" id="act-redes" name="actividades" value="redes">
-            <span>Ayuda con redes sociales y fotografía</span>
-          </label>
-
-          <label class="opcion-check">
-            <input type="checkbox" id="act-eventos" name="actividades" value="eventos">
-            <span>Logística en eventos de recaudación</span>
-          </label>
-        </fieldset>
-
-        <div class="campo-grupo">
-          <label for="vol-comentarios">¿Tienes alguna habilidad especial o comentario extra?</label>
-          <textarea id="vol-comentarios" name="vol-comentarios" rows="3"></textarea>
-        </div>
-
-        <div class="fila-botones">
-          <button type="submit" class="btn-accion">Registrarse y Agendar en Google Calendar</button>
-          <a href="#vista-usuario" class="btn-secundario">Volver a Mi Perfil</a>
-        </div>
-      </form>
-    </section>
-  </main>
-
-  <footer class="pie-pagina">
-    <p>&copy; 2026 Refugio Santa Tecla. Todos los derechos reservados.</p>
-  </footer>
+                url = "https://calendar.google.com/calendar/render?action=TEMPLATE" +
+                      "&text=" + encodeURIComponent("Voluntariado - Refugio de Perros") +
+                      "&details=" + encodeURIComponent(detalles);
+            }
+            window.open(url, "_blank");
+        });
+    </script>
 
 </body>
 </html>

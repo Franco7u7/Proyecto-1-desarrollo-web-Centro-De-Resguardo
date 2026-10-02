@@ -169,5 +169,23 @@
     <p>&copy; 2026 Refugio Santa Tecla. Todos los derechos reservados.</p>
   </footer>
 
+  <script>
+    // Cambia cada enlace por el tuyo
+    const ENLACES_PAGO = {
+      tarjeta:  "https://www.bancoagricola.com",
+      paypal:   "https://www.paypal.com/donate/?hosted_button_id=TU_ID",
+      gofundme: "https://www.gofundme.com",
+      bitcoin:  "https://bitcoin.org"
+    };
+
+    document.getElementById("form-pago").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const elegido = document.querySelector('input[name="metodo-pago"]:checked');
+      if (elegido) {
+        window.location.href = ENLACES_PAGO[elegido.value];
+      }
+    });
+  </script>
+
 </body>
 </html>
